@@ -40,9 +40,6 @@ fun MainScreen() {
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-//            IntentYouTube()
-//            IntentHomepage()
-
             IntentButton(
                 text = "유튜브",
                 link = "https://www.youtube.com/results?search_query=android+developers"
@@ -58,6 +55,25 @@ fun MainScreen() {
                 link = "https://www.facebook.com/bangtan.official"
             )
 
+            IntentButton(
+                text = "우리집 좌표",
+                link = "geo:36.145014,128.393047?z=17"
+            )
+
+            IntentButton(
+                text = "우리집 주소",
+                link = "geo:0,0?q=국립금오공과대학교"
+            )
+
+            IntentButton(
+                text = "전화",
+                link = "tel:054-478-7114"
+            )
+
+            IntentButton(
+                text = "문자",
+                link = "sms:054-478-7114"
+            )
         }
     }
 }
