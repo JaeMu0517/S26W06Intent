@@ -6,17 +6,22 @@ import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import kr.ac.kumoh.s20211107.s26w06intent.ui.theme.S26W06IntentTheme
 
@@ -41,16 +46,32 @@ fun MainScreen() {
         "우리집 좌표" to "geo:36.145014,128.393047?z=17",
         "우리집 주소" to "geo:0,0?q=국립금오공과대학교",
         "전화" to "tel:054-478-7114",
-        "문자" to "sms:054-478-7114"
-    )
+        "문자" to "sms:054-478-7114",
+        "유튜브" to "https://www.youtube.com/results?search_query=android+developers",
+        "인스타그램" to "https://www.instagram.com/blackpinkofficial/",
+        "페이스북" to "https://www.facebook.com/bangtan.official",
+        "우리집 좌표" to "geo:36.145014,128.393047?z=17",
+        "우리집 주소" to "geo:0,0?q=국립금오공과대학교",
+        "전화" to "tel:054-478-7114",
+        "문자" to "sms:054-478-7114",
+        "유튜브" to "https://www.youtube.com/results?search_query=android+developers",
+        "인스타그램" to "https://www.instagram.com/blackpinkofficial/",
+        "페이스북" to "https://www.facebook.com/bangtan.official",
+        "우리집 좌표" to "geo:36.145014,128.393047?z=17",
+        "우리집 주소" to "geo:0,0?q=국립금오공과대학교",
+        "전화" to "tel:054-478-7114",
+        "문자" to "sms:054-478-7114",
+
+        )
 
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding)
+                .padding(innerPadding),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            intentItems.forEach { item ->
+            items(intentItems) { item ->
                 IntentButton(item = item)
             }
         }
